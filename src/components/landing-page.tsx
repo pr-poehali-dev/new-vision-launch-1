@@ -13,9 +13,10 @@ export function LandingPage() {
   const themeConfig = themes[theme]
 
   const [targetDate, setTargetDate] = useState<Date>(() => {
-    const date = new Date()
-    date.setDate(date.getDate() + 7)
-    return date
+    const now = new Date()
+    const birthday = new Date(now.getFullYear(), 3, 23) // 23 апреля
+    if (birthday <= now) birthday.setFullYear(now.getFullYear() + 1)
+    return birthday
   })
 
   const [days, setDays] = useState("7")
@@ -48,101 +49,101 @@ export function LandingPage() {
     }
   > = {
     "minimal-light": {
-      badge: "Скоро запуск",
-      title: "Будущее",
-      highlight: "продуктивности",
+      badge: "День рождения близко",
+      title: "Скоро",
+      highlight: "праздник!",
       subtitle:
-        "Мы создаем то, что изменит ваш подход к работе. Просто, мощно и современно.",
-      cta: "Получить ранний доступ",
+        "Отсчёт идёт. Готовься к самому особенному дню — торт, свечи и всё самое лучшее уже совсем скоро.",
+      cta: "Отправить поздравление",
       features: [
-        { icon: Sparkles, text: "На базе ИИ" },
-        { icon: Zap, text: "Молниеносно" },
-        { icon: Shield, text: "Приватность" },
+        { icon: Sparkles, text: "Праздник" },
+        { icon: Zap, text: "Веселье" },
+        { icon: Shield, text: "Радость" },
       ],
     },
     dark: {
-      badge: "Скоро старт",
-      title: "Новый уровень",
-      highlight: "эволюции",
-      subtitle: "Новый стандарт цифрового опыта. Создано для тех, кто требует лучшего.",
-      cta: "Встать в очередь",
+      badge: "Скоро праздник",
+      title: "Большой",
+      highlight: "день близко",
+      subtitle: "Тот самый день не за горами. Время готовить сюрпризы и доставать шампанское.",
+      cta: "Отправить поздравление",
       features: [
-        { icon: Sparkles, text: "Новое поколение" },
-        { icon: Zap, text: "Сверхскорость" },
-        { icon: Shield, text: "Для бизнеса" },
+        { icon: Sparkles, text: "Сюрпризы" },
+        { icon: Zap, text: "Веселье" },
+        { icon: Shield, text: "Тепло" },
       ],
     },
     retro: {
-      badge: "Отправление скоро",
-      title: "Ваше путешествие",
-      highlight: "начинается здесь",
-      subtitle: "Шагните в мир, где классика встречает инновации. Вечный дизайн, современный функционал.",
-      cta: "Забронировать место",
+      badge: "Праздник не за горами",
+      title: "Этот день",
+      highlight: "не забудешь",
+      subtitle: "Ещё немного — и начнётся самое лучшее. Торт уже ждёт, свечи почти задуты.",
+      cta: "Поздравить",
       features: [
-        { icon: Sparkles, text: "Вечный дизайн" },
-        { icon: Zap, text: "Мгновенный доступ" },
-        { icon: Shield, text: "Надежность" },
+        { icon: Sparkles, text: "Торт" },
+        { icon: Zap, text: "Свечи" },
+        { icon: Shield, text: "Подарки" },
       ],
     },
     neon: {
-      badge: "[ ИНИЦИАЛИЗАЦИЯ ]",
-      title: "СИСТЕМНЫЙ",
-      highlight: "ПРОРЫВ",
-      subtitle: "Протокол интерфейса нового поколения. Ломаем барьеры. Переопределяем границы.",
-      cta: "НАЧАТЬ ДОСТУП",
+      badge: "[ ДЕНЬ РОЖДЕНИЯ ]",
+      title: "ГЛАВНЫЙ",
+      highlight: "ДЕНЬ ГОДА",
+      subtitle: "Система отсчёта активирована. Готовность к празднику: 100%. Запуск неизбежен.",
+      cta: "ПОЗДРАВИТЬ",
       features: [
-        { icon: Sparkles, text: "КВАНТОВОЕ ЯДРО" },
-        { icon: Zap, text: "ГИПЕРСКОРОСТЬ" },
-        { icon: Shield, text: "ШИФРОВАНИЕ" },
+        { icon: Sparkles, text: "ПРАЗДНИК" },
+        { icon: Zap, text: "ВЕСЕЛЬЕ" },
+        { icon: Shield, text: "СЮРПРИЗЫ" },
       ],
     },
     monochrome: {
-      badge: "Анонс",
-      title: "Изысканная",
-      highlight: "простота",
-      subtitle: "Где форма встречает функцию. Создано с умыслом, спроектировано для эффекта.",
-      cta: "Получить уведомление",
+      badge: "Анонс дня рождения",
+      title: "Особый",
+      highlight: "день",
+      subtitle: "Каждая секунда приближает к празднику. Минимализм в дизайне — максимум радости.",
+      cta: "Поздравить",
       features: [
-        { icon: Sparkles, text: "Продуманно" },
-        { icon: Zap, text: "Эффективно" },
-        { icon: Shield, text: "Надежно" },
+        { icon: Sparkles, text: "Праздник" },
+        { icon: Zap, text: "Момент" },
+        { icon: Shield, text: "Память" },
       ],
     },
     glass: {
-      badge: "Превью",
-      title: "За пределами",
-      highlight: "границ",
-      subtitle: "Плавный опыт, который адаптируется под вас. Бесшовно, красиво, интуитивно.",
-      cta: "Запросить доступ",
+      badge: "Праздник скоро",
+      title: "День, который",
+      highlight: "ждёшь",
+      subtitle: "Лёгкий, как пузырьки шампанского. Твой день рождения уже совсем близко.",
+      cta: "Поздравить",
       features: [
-        { icon: Sparkles, text: "Адаптивно" },
-        { icon: Zap, text: "Бесшовно" },
-        { icon: Shield, text: "Безопасно" },
+        { icon: Sparkles, text: "Шампанское" },
+        { icon: Zap, text: "Праздник" },
+        { icon: Shield, text: "Радость" },
       ],
     },
     terminal: {
-      badge: "> status: pending",
-      title: "$ sudo launch",
-      highlight: "--force",
-      subtitle: "// требуется root доступ. ожидание подтверждения развертывания...",
-      cta: "$ subscribe --notify",
+      badge: "> birthday: incoming",
+      title: "$ sudo celebrate",
+      highlight: "--birthday",
+      subtitle: "// отсчёт активирован. ожидание дня рождения... приготовить торт и свечи.",
+      cta: "$ send --congratulations",
       features: [
-        { icon: Sparkles, text: "--optimized" },
-        { icon: Zap, text: "--async" },
-        { icon: Shield, text: "--secure" },
+        { icon: Sparkles, text: "--cake=true" },
+        { icon: Zap, text: "--candles=on" },
+        { icon: Shield, text: "--party=epic" },
       ],
     },
     luxury: {
-      badge: "Эксклюзивный превью",
-      title: "Открываем",
-      highlight: "совершенство",
+      badge: "Торжественный день близко",
+      title: "Ждём",
+      highlight: "праздника",
       subtitle:
-        "Для избранных ценителей. Опыт, созданный для тех, кто не соглашается на меньшее.",
-      cta: "Запросить приглашение",
+        "Изысканный повод собраться вместе. Самый особенный день заслуживает самого особенного внимания.",
+      cta: "Отправить поздравление",
       features: [
-        { icon: Sparkles, text: "Уникально" },
-        { icon: Zap, text: "Премиум" },
-        { icon: Shield, text: "Эксклюзив" },
+        { icon: Sparkles, text: "Торжество" },
+        { icon: Zap, text: "Эксклюзив" },
+        { icon: Shield, text: "Особый" },
       ],
     },
   }
@@ -483,7 +484,7 @@ export function LandingPage() {
                 ))}
               </div>
               <span className="text-[10px] sm:text-xs">
-                {theme === "terminal" ? "// 2847 users_waiting" : "Уже 2 847+ в очереди"}
+                {theme === "terminal" ? "// friends_ready: many" : "Друзья уже готовятся 🎉"}
               </span>
             </div>
           </div>
@@ -501,8 +502,8 @@ export function LandingPage() {
       >
         <p className="text-xs sm:text-sm">
           {theme === "terminal"
-            ? "© 2025 // launchpad_inc | privacy --policy | terms --conditions"
-            : "© 2025 LaunchPad Inc. · Политика конфиденциальности · Условия"}
+            ? "// happy_birthday.exe | made with 💚 | party --mode=on"
+            : "С днём рождения! 🎂 · Сделано с любовью"}
         </p>
       </footer>
     </div>
